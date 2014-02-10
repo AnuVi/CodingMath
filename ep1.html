@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Coding Math ep1</title>
+	<style>
+	html, body{
+		margin:0;
+
+	}
+		/*in html canvas element is an inline element -to get rid of the scroll-bars - change the element's type*/
+	canvas{
+		display: block;
+
+	}
+		
+	</style>
+</head>
+<body>
+	<canvas id ="canvas"></canvas>
+<script>
+	/* load after the index.html for simplier -for jquery - document.ready */
+
+window.onload = function(){
+
+		var canvas = document.getElementById('canvas'),
+			context = canvas.getContext("2d"),
+			// set width/height full area of browser height
+			width = canvas.width = window.innerWidth,
+			height = canvas.height = window.innerHeight;
+			/* for checking that everything works ok - black rectangle
+			context.fillRect(0, 0, width, height);
+			*/
+
+		/*several random lines*/
+
+		for( var i = 0; i<100; i+=1){
+			context.beginPath();
+			context.moveTo(Math.random() * width, Math.random() * height);
+			context.lineTo(Math.random() * width, Math.random() * height);
+			context.stroke();
+
+
+		}
+};
+</script>
+</body>
+</html>
